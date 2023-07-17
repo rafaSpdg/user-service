@@ -1,6 +1,9 @@
 package com.dolphinevents.userservice.user;
 
 import java.time.LocalDate;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.lang.Override;
 
 import jakarta.persistence.Column;
@@ -55,6 +58,7 @@ public class User {
     private String email;
 
     @NotNull
+    @JsonIgnore
     private String password;
 
     @Size(min= 9, max= 9, message= "Phone number should have exactly 9 digits")
